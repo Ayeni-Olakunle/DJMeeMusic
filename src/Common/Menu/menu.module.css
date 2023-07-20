@@ -1,0 +1,47 @@
+.holdHeader {
+  position: absolute;
+  z-index: 5;
+  width: 100%;
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.holdLogo {
+  margin-left: 120px;
+  background-color: white;
+  width: 75px;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+}
+
+.holdLogo img {
+  width: 55px;
+  height: 60px;
+}
+
+.holdList {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  margin-right: 120px;
+}
+
+.holdList li {
+  color: black;
+  margin: 0 20px;
+}
+
+.holdList li a {
+  color: white;
+}
+
+.holdList li a:hover {
+  color: red;
+  transition: 0.5s;
+}
