@@ -5,10 +5,27 @@ import hero2 from "../../../assets/djhero2-min.jpg";
 import hero3 from "../../../assets/djhero3-min.jpg";
 import hero4 from "../../../assets/djhero4-min.jpg";
 import style from "./home.module.css";
-import { motion } from "framer-motion";
+import {
+  MdOutlineArrowBackIosNew,
+  MdOutlineArrowForwardIos,
+} from "react-icons/md";
 
 const HomeSub: FC = () => {
   const [count, setCount] = useState<number>(0);
+
+  const arrowBack = () => {
+    setCount(count - 1);
+    if (count === 0) {
+      setCount(3);
+    }
+  };
+
+  const arrowForward = () => {
+    setCount(count + 1);
+    if (count === 3) {
+      setCount(0);
+    }
+  };
 
   useEffect(() => {
     const intervalId = setTimeout(() => {
@@ -16,12 +33,16 @@ const HomeSub: FC = () => {
       if (count === 3) {
         setCount(0);
       }
-    }, 8000);
+    }, 10000);
     return () => clearInterval(intervalId);
   }, [count]);
 
   return (
     <section>
+      <span className={style.backArrow} onClick={arrowBack}>
+        <MdOutlineArrowBackIosNew />
+      </span>
+
       {count === 0 ? (
         <div className={style.fade}>
           <div className={style.holdText}>
@@ -41,7 +62,7 @@ const HomeSub: FC = () => {
             </div>
           </div>
           <div className={style.holdImage}>
-            <img src={hero1} alt="hero1" />
+            <img src={hero1} alt="hero1" loading="lazy" />
           </div>
         </div>
       ) : null}
@@ -157,6 +178,10 @@ const HomeSub: FC = () => {
           </div>
         </div>
       ) : null} */}
+
+      <span className={style.arrowForward} onClick={arrowForward}>
+        <MdOutlineArrowForwardIos />
+      </span>
     </section>
   );
 };

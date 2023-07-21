@@ -72,20 +72,54 @@
 
 @keyframes h3 {
   0% {
+    opacity: 0;
     transform: translateX(-100%);
     visibility: visible;
   }
   100% {
+    opacity: 1;
     transform: translateX(0);
   }
 }
 
 @keyframes text1 {
   0% {
+    opacity: 0;
     transform: translateX(100%);
     visibility: visible;
   }
   100% {
+    opacity: 1;
     transform: translateX(0);
   }
+}
+
+.backArrow {
+  position: absolute;
+  font-size: 50px;
+  top: 370px;
+  color: #ffffff3b;
+  z-index: 1;
+  left: 100px;
+  cursor: pointer;
+}
+
+.backArrow:hover {
+  color: white;
+  transition: 0.5s;
+}
+
+.arrowForward {
+  position: absolute;
+  font-size: 50px;
+  top: 370px;
+  color: #ffffff3b;
+  z-index: 1;
+  right: 100px;
+  cursor: pointer;
+}
+
+.arrowForward:hover {
+  color: white;
+  transition: 0.5s;
 }
