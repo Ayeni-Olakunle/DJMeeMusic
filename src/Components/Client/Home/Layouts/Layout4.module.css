@@ -1,0 +1,87 @@
+.holdAll2 {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  /* margin-top: 50px; */
+}
+
+.holdAll2P {
+  width: 80%;
+}
+
+.hotest {
+  background-color: #922828;
+  padding: 10px;
+  color: white;
+  margin: 0;
+}
+
+.holdPost {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.holdPost2 {
+  padding: 10px;
+  background-color: black;
+  width: 300px;
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  border-radius: 10px 10px 0 0;
+}
+
+.holdcover1 {
+  width: 100%;
+}
+
+.holdName {
+  margin: 0;
+  color: #a73618;
+  font-size: 25px;
+  text-align: center;
+  padding: 10px;
+  font-weight: bolder;
+}
+
+.Title {
+  margin: 0;
+  color: #b8b8b8;
+  font-size: 25px;
+  text-align: center;
+}
+
+.holdMusicList {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.musicList1 {
+  width: 94%;
+  border-bottom: 3px solid #a73618;
+  background-color: black;
+  padding: 10px;
+}
+
+.musicList1 h4 {
+  margin: 0;
+  color: #a73618;
+  font-size: 20px;
+  text-align: left;
+}
+
+.musicList1 p {
+  margin: 0;
+  color: #b8b8b8;
+}
+
+.more {
+  cursor: pointer;
+  text-align: center;
+}

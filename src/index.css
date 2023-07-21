@@ -25,7 +25,7 @@ a:hover {
 
 body {
   margin: 0;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 h1 {
