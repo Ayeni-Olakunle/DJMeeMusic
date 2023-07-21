@@ -57,7 +57,7 @@
 }
 
 .fade {
-  animation: fadeOut 8s;
+  animation: fadeOut 10s;
   opacity: 0;
 }
 
