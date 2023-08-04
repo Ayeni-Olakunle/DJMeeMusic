@@ -15,10 +15,10 @@ const Menu: FC = () => {
           <Link to={"/"}>Home</Link>
         </li>
         <li>
-          <Link to={"/"}>Gallery</Link>
+          <Link to={"/"}>Our Music</Link>
         </li>
         <li>
-          <Link to={"/"}>Our Music</Link>
+          <Link to={"/"}>Our Video</Link>
         </li>
         <li>
           <Link to={"/"}>Blog</Link>
