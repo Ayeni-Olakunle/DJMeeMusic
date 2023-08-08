@@ -1,14 +1,16 @@
 import { FC } from "react";
-import style from "./Layout2.module.css";
-import Layout3 from "./Layout3";
 import Latest from "../../../../Common/Latest/Latest";
+// import Layout1 from "../Home/Layouts/Layout1";
+// import Layout2 from "../Home/Layouts/Layout2";
+import LatestSongs from "../LatestSongs/LatestSong";
+import style from "./Music.module.css";
 
-const Layout2: FC = () => {
+const MusicSub: FC = () => {
   return (
     <section className={style.holdAll}>
       <div className={style.holdAllSec}>
         <div className={style.holdLay3}>
-          <Layout3 />
+          <LatestSongs />
         </div>
         <div className={style.holdLay4}>
           <Latest />
@@ -18,4 +20,4 @@ const Layout2: FC = () => {
   );
 };
 
-export default Layout2;
+export default MusicSub;

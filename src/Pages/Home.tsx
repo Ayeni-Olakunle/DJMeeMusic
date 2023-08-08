@@ -6,7 +6,16 @@ import Footer from "../Common/Footer/footer";
 const Home: FC = () => {
   return (
     <section>
-      <Menu />
+      <div
+        style={{
+          position: "absolute",
+          zIndex: "5",
+          width: "100%",
+          marginTop: "30px",
+        }}
+      >
+        <Menu />
+      </div>
       <HomeSub />
       <Footer />
     </section>

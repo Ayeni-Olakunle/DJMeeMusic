@@ -1,0 +1,50 @@
+.LatestSongs {
+  background-color: #922828;
+  padding: 12px;
+  color: white;
+  margin: 0;
+  margin-bottom: 20px;
+}
+
+.holdSong {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 20px;
+  border-bottom: 1px solid gray;
+  padding: 10px 0;
+  margin-bottom: 15px;
+}
+
+.holdSong img {
+  width: 240px;
+  height: 170px;
+}
+
+.SongDetails {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.holdDownload {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  text-align: center;
+  gap: 20px;
+}
+
+.holdDownload a {
+  background-color: #922828;
+  color: white;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}

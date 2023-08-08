@@ -1,9 +1,9 @@
 import { FC } from "react";
-import style from "./Layout4.module.css";
-import cover1 from "../../../../assets/trend1.jpeg";
-import cover2 from "../../../../assets/cover2.jpeg";
+import style from "./Latest.module.css";
+import cover1 from "../../assets/trend1.jpeg";
+import cover2 from "../../assets/cover2.jpeg";
 
-const Layout4: FC = () => {
+const Latest: FC = () => {
   return (
     <section>
       <div className={style.holdAll}>
@@ -135,4 +135,4 @@ const Layout4: FC = () => {
   );
 };
 
-export default Layout4;
+export default Latest;

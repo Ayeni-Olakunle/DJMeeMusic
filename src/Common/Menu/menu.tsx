@@ -1,6 +1,6 @@
 import { FC } from "react";
 import Logo from "../../assets/Logo.png";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import style from "./menu.module.css";
 
 const Menu: FC = () => {
@@ -12,22 +12,64 @@ const Menu: FC = () => {
 
       <ul className={style.holdList}>
         <li>
-          <Link to={"/"}>Home</Link>
+          <NavLink
+            to={"/"}
+            className={({ isActive }) =>
+              isActive ? style.activeNow : style.Notactive
+            }
+          >
+            Home
+          </NavLink>
         </li>
         <li>
-          <Link to={"/"}>Our Music</Link>
+          <NavLink
+            to={"/music"}
+            className={({ isActive }) =>
+              isActive ? style.activeNow : style.Notactive
+            }
+          >
+            Our Music
+          </NavLink>
         </li>
         <li>
-          <Link to={"/"}>Our Video</Link>
+          <NavLink
+            to={"/video"}
+            className={({ isActive }) =>
+              isActive ? style.activeNow : style.Notactive
+            }
+          >
+            Our Video
+          </NavLink>
         </li>
         <li>
-          <Link to={"/"}>Blog</Link>
+          <NavLink
+            to={"/blog"}
+            className={({ isActive }) =>
+              isActive ? style.activeNow : style.Notactive
+            }
+          >
+            Blog
+          </NavLink>
         </li>
         <li>
-          <Link to={"/"}>About</Link>
+          <NavLink
+            to={"/about"}
+            className={({ isActive }) =>
+              isActive ? style.activeNow : style.Notactive
+            }
+          >
+            About
+          </NavLink>
         </li>
         <li>
-          <Link to={"/"}>Contact</Link>
+          <NavLink
+            to={"/contact"}
+            className={({ isActive }) =>
+              isActive ? style.activeNow : style.Notactive
+            }
+          >
+            Contact
+          </NavLink>
         </li>
       </ul>
     </header>

@@ -1,8 +1,6 @@
 .holdHeader {
-  position: absolute;
-  z-index: 5;
   width: 100%;
-  margin-top: 30px;
+  /* margin-top: 30px; */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -37,11 +35,19 @@
   margin: 0 20px;
 }
 
-.holdList li a {
+/* .holdList li a {
   color: white;
-}
+} */
 
 .holdList li a:hover {
   color: red;
   transition: 0.5s;
+}
+
+.activeNow {
+  color: red;
+}
+
+.Notactive {
+  color: white;
 }
