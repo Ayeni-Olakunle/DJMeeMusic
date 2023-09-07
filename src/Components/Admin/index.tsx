@@ -66,9 +66,9 @@ export default function Index() {
             </li>
             <li className={IndexStyles.list} onClick={tabs}>
               <Link
-                to="make-enquiry"
+                to="upload-music"
                 className={
-                  navValue === "/admin/make-enquiry"
+                  navValue === "/admin/upload-music"
                     ? IndexStyles.active
                     : IndexStyles.listLink
                 }

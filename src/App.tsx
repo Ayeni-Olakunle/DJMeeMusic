@@ -27,7 +27,7 @@ const App: FC = () => {
             <Route index={true} element={<Overview />} />
           </Route>
 
-          <Route path="make-enquiry">
+          <Route path="upload-music">
             <Route index={true} element={<MakeEnquiry />} />
           </Route>
 
