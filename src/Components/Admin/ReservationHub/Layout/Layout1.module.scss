@@ -1,0 +1,116 @@
+.holdAll {
+  margin: 3em 0;
+  .textHead {
+    font-size: 25px;
+    font-weight: 600;
+  }
+  .holdDateSearch {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2.5em 0;
+
+    .search {
+      font-family: inherit;
+      font-size: 15px;
+      font-weight: 400;
+      color: #777e90;
+      border: none;
+      border: 2px solid #e6e8ec;
+      padding: 10px;
+      border-radius: 0.8rem;
+      margin-right: 11.75rem;
+      width: 100%;
+      outline: none;
+    }
+    .date {
+      font-family: inherit;
+      font-size: 13px;
+      font-weight: 400;
+      color: #777e90;
+      border: none;
+      border: 2px solid #e6e8ec;
+      padding: 10px;
+      border-radius: 50px;
+      width: 100%;
+      outline: none;
+    }
+  }
+  .holdButin {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #e4e4e4;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 35%;
+  }
+  .butinMenu {
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+    border: none;
+    background-color: transparent;
+  }
+  .active {
+    color: #ffffff !important;
+    background-color: #019785 !important;
+  }
+
+  .LoadMore {
+    text-align: center;
+    margin-top: 50px;
+
+    button {
+      background-color: #f1a801;
+      color: #ffffff;
+      padding: 10px 30px;
+      border: none;
+      border-radius: 10px;
+    }
+  }
+  thead tr td {
+    text-transform: uppercase;
+    color: #808191;
+    padding: 15px 10px;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: capitalize;
+  }
+  thead tr {
+    text-transform: uppercase;
+    color: #808191;
+    background-color: rgba(228, 228, 228, 0.3);
+  }
+  .holdTable tr td {
+    padding: 15px 10px;
+    letter-spacing: 1px;
+    font-size: 14px;
+    color: #808191;
+    text-transform: capitalize;
+  }
+  .holdTable tr:nth-child(even) {
+    background-color: rgba(228, 228, 228, 0.3);
+  }
+  @media (min-width: 578px) {
+    .modal-dialog {
+      max-width: 500px !important;
+      margin: 1.75rem auto;
+    }
+  }
+}
+
+.pend {
+  color: #f1a801 !important;
+}
+.compl {
+  color: #58bd7d !important;
+}
+
+.details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 15px;
+}

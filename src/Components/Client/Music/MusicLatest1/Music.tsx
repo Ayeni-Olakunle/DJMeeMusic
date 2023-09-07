@@ -1,7 +1,5 @@
 import { FC } from "react";
 import Latest from "../../../../Common/Latest/Latest";
-// import Layout1 from "../Home/Layouts/Layout1";
-// import Layout2 from "../Home/Layouts/Layout2";
 import LatestSongs from "../LatestSongs/LatestSong";
 import style from "./Music.module.css";
 

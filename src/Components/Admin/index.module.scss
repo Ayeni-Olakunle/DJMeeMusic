@@ -1,0 +1,85 @@
+.holdAll {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+
+  .NavBar {
+    width: 18%;
+    height: 100vh;
+    border-right: 1.2px solid lightgray;
+    padding: 15px;
+    overflow-y: scroll;
+
+    .iconSvg {
+      height: 18px;
+      margin-right: 10px;
+    }
+
+    .list {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+
+      .listLink {
+        text-decoration: none;
+        color: #808191;
+        text-decoration: none;
+        padding: 1.3rem 1.5rem;
+        display: flex;
+        align-items: center;
+        transition: all 0.2s;
+        width: 100%;
+      }
+      .active {
+        background-color: #e4e4e4;
+        border-radius: 1.2rem;
+        color: #f1a801;
+        text-decoration: none;
+        padding: 1.3rem 1.5rem;
+        display: flex;
+        align-items: center;
+        transition: all 0.2s;
+        width: 100%;
+      }
+    }
+  }
+  .holdHeader {
+    width: 82%;
+    padding: 20px 30px;
+    height: 100vh;
+    border-right: 1.2px solid lightgray;
+    overflow-y: scroll;
+
+    .holdFlex {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+
+      .headerImage {
+        height: 45px;
+        border-radius: 100%;
+        margin-left: 20px;
+      }
+    }
+    .headerSec {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .headerNoti {
+        display: flex;
+        margin-right: 20px;
+
+        .headerNotiBall {
+          height: 12px;
+          width: 12px;
+          border-radius: 50%;
+          background-color: #58bd7d;
+          margin-left: -3px;
+          margin-top: -10px;
+        }
+      }
+    }
+  }
+}

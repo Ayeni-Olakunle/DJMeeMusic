@@ -1,35 +1,54 @@
-import { FC } from "react";
+import { FC, useState, useEffect } from "react";
 import asake from "../../../../assets/asake.jpeg";
 import style from "./LatestSong.module.css";
+import axios from "axios";
+// import {} from "cloudinary-react";
 
 const LatestSongs: FC = () => {
+  const [data, setData] = useState<string[]>([]);
+  const getMusic = () => {
+    axios
+      .get("https://kind-plum-whale-toga.cyclic.cloud/api/music")
+      .then((response) => {
+        setData(response.data);
+        console.log(response);
+      })
+      .catch((err) => {
+        alert("Opps sometimes went wrong");
+      });
+  };
+
+  useEffect(() => {
+    getMusic();
+  }, []);
   return (
     <section>
       <h1 className={style.LatestSongs}>Latest Songs</h1>
       <div>
-        <div className={style.holdSong}>
-          <img src={asake} alt="Dj Mee" />
-          <div className={style.SongDetails}>
-            <div>
-              <h1>Asake</h1>
-              <p>Only at the top</p>
-              <p>Featuring: Dj Mee</p>
-            </div>
+        {data.map((item, index) => {
+          return (
+            <div className={style.holdSong} key={index}>
+              <img src={asake} alt="Dj Mee" />
+              <div className={style.SongDetails}>
+                <div>
+                  <h1>{item.articsName}</h1>
+                  <p>{item.musicTitle}</p>
+                  <p>Featuring: {item.featuredArtisc}</p>
+                </div>
 
-            <div className={style.holdDownload}>
-              <button>Song Details</button>
-              <a
-                href="https://res.cloudinary.com/dl1pgb7kr/video/upload/v1691502806/Adekunle-Gold----Ogaranya-2_kuv3s1.mp3"
-                download
-              >
-                Download
-              </a>
+                <div className={style.holdDownload}>
+                  <button>Song Details</button>
+                  <a href={item.musicLink} download>
+                    Download
+                  </a>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
+          );
+        })}
       </div>
     </section>
   );
 };
-
+// "https://drive.google.com/file/d/1mCexXGS3luhOaKk25KPhihu-NA5_INwi/view?usp=drive_link"
 export default LatestSongs;

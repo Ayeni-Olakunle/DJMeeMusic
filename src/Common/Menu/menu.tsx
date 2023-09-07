@@ -33,7 +33,7 @@ const Menu: FC = () => {
         </li>
         <li>
           <NavLink
-            to={"/video"}
+            to={"/videos"}
             className={({ isActive }) =>
               isActive ? style.activeNow : style.Notactive
             }

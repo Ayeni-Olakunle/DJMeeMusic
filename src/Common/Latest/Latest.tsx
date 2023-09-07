@@ -15,7 +15,7 @@ const Latest: FC = () => {
               <div className={style.holdPost2}>
                 <img src={cover1} alt="cover1" className={style.holdcover1} />
                 <h1 className={style.holdName}>DjMee Music</h1>
-                <p className={style.Title}>Orenta</p>
+                <p className={style.Title}>Orenta One</p>
               </div>
             </div>
 
