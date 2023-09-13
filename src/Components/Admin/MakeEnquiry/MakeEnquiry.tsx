@@ -166,6 +166,8 @@ const MakeEnquiry: FC = () => {
                   <option value="Gosple">Gosple</option>
                   <option value="Fuji">Fuji</option>
                   <option value="Apala">Apala</option>
+                  <option value="Afro">Afro</option>
+                  <option value="Amapiano">Amapiano</option>
                 </select>
               </div>
             </div>
