@@ -11,6 +11,7 @@ const MakeEnquiry: FC = () => {
   const [releasedYear, setReleasedYear] = useState<string>("");
   const [category, setCategory] = useState<string>("");
   const [youtubeLink, setYoutubeLink] = useState<string>("");
+  const [image, setImage] = useState<string>("");
   const [songDeails1, setSongDeails1] = useState<string>("");
   const [songDeails2, setSongDeails2] = useState<string>("");
   const [songDeails3, setSongDeails3] = useState<string>("");
@@ -30,6 +31,7 @@ const MakeEnquiry: FC = () => {
       releasedYear,
       category,
       youtubeLink,
+      image,
       songDeails1,
       songDeails2,
       songDeails3,
@@ -56,6 +58,7 @@ const MakeEnquiry: FC = () => {
         setReleasedYear("");
         setCategory("");
         setYoutubeLink("");
+        setImage("");
         setSongDeails1("");
         setSongDeails2("");
         setSongDeails3("");
@@ -148,6 +151,18 @@ const MakeEnquiry: FC = () => {
                   id="featuredArtisc"
                   value={featuredArtisc}
                   onChange={(e) => setFeaturedArtisc(e.target.value)}
+                />
+              </div>
+
+              <div className={Layout1Style.holInput}>
+                <label htmlFor="featuredArtisc">Add Image Link</label>
+                <br />
+                <input
+                  type="text"
+                  placeholder="Image"
+                  id="image"
+                  value={image}
+                  onChange={(e) => setImage(e.target.value)}
                 />
               </div>
 
