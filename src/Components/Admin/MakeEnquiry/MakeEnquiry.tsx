@@ -1,69 +1,96 @@
-import React, { useState, FC } from "react";
+import React, { useState, FC, ChangeEvent, FormEvent } from "react";
 import Layout1Style from "./MakeEnquiry.module.scss";
 import axios from "axios";
 import env from "react-dotenv";
 
+interface FormData {
+  image: File | null;
+  musicTitle: string;
+  musicLink: string;
+  articsName: string;
+  featuredArtisc: string;
+  releasedYear: string;
+  category: string;
+  youtubeLink: string;
+  songDeails1: string;
+  songDeails2: string;
+  songDeails3: string;
+  songDeails4: string;
+  songDeails5: string;
+}
+
 const MakeEnquiry: FC = () => {
-  const [musicTitle, setMsicTitle] = useState<string>("");
-  const [musicLink, setMusicLink] = useState<string>("");
-  const [articsName, setArticsName] = useState<string>("");
-  const [featuredArtisc, setFeaturedArtisc] = useState<string>("");
-  const [releasedYear, setReleasedYear] = useState<string>("");
-  const [category, setCategory] = useState<string>("");
-  const [youtubeLink, setYoutubeLink] = useState<string>("");
-  const [image, setImage] = useState<string>("");
-  const [songDeails1, setSongDeails1] = useState<string>("");
-  const [songDeails2, setSongDeails2] = useState<string>("");
-  const [songDeails3, setSongDeails3] = useState<string>("");
-  const [songDeails4, setSongDeails4] = useState<string>("");
-  const [songDeails5, setSongDeails5] = useState<string>("");
+  const [formData, setFormData] = useState<FormData>({
+    image: null,
+    musicTitle: "",
+    musicLink: "",
+    articsName: "",
+    featuredArtisc: "",
+    releasedYear: "",
+    category: "",
+    youtubeLink: "",
+    songDeails1: "",
+    songDeails2: "",
+    songDeails3: "",
+    songDeails4: "",
+    songDeails5: "",
+  });
+
+  const handleInputChange = (
+    event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value } = event.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+  const handleImageChange = (event: ChangeEvent<HTMLInputElement>) => {
+    const file = event.target.files?.[0];
+    setFormData({ ...formData, image: file || null });
+  };
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    alert("working");
+    const formDataToSend = new FormData();
+    formDataToSend.append("images", formData.image as File);
+    formDataToSend.append("musicTitle", formData.musicTitle);
+    formDataToSend.append("musicLink", formData.musicLink);
+    formDataToSend.append("articsName", formData.articsName);
+    formDataToSend.append("featuredArtisc", formData.featuredArtisc);
+    formDataToSend.append("releasedYear", formData.releasedYear);
+    formDataToSend.append("category", "Afro");
+    formDataToSend.append("youtubeLink", formData.youtubeLink);
+    formDataToSend.append("songDeails1", formData.songDeails1);
+    formDataToSend.append("songDeails2", formData.songDeails2);
+    formDataToSend.append("songDeails3", formData.songDeails3);
+    formDataToSend.append("songDeails4", formData.songDeails4);
+    formDataToSend.append("songDeails5", formData.songDeails5);
 
-    const data = {
-      musicTitle,
-      musicLink,
-      articsName,
-      featuredArtisc,
-      releasedYear,
-      category,
-      youtubeLink,
-      image,
-      songDeails1,
-      songDeails2,
-      songDeails3,
-      songDeails4,
-      songDeails5,
-    };
+    console.log(formDataToSend);
 
     const options = {
       url: `https://kind-plum-whale-toga.cyclic.cloud/api/music`,
       method: "POST",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json;charset=UTF-8",
-      },
-      data: data,
+      data: formDataToSend,
     };
 
     axios(options)
       .then((response) => {
-        setMsicTitle("");
-        setMusicLink("");
-        setArticsName("");
-        setFeaturedArtisc("");
-        setReleasedYear("");
-        setCategory("");
-        setYoutubeLink("");
-        setImage("");
-        setSongDeails1("");
-        setSongDeails2("");
-        setSongDeails3("");
-        setSongDeails4("");
-        setSongDeails5("");
+        setFormData({
+          image: null,
+          musicTitle: "",
+          musicLink: "",
+          articsName: "",
+          featuredArtisc: "",
+          releasedYear: "",
+          category: "",
+          youtubeLink: "",
+          songDeails1: "",
+          songDeails2: "",
+          songDeails3: "",
+          songDeails4: "",
+          songDeails5: "",
+        });
         console.log(response);
         alert("Success!");
       })
@@ -86,8 +113,10 @@ const MakeEnquiry: FC = () => {
                 <input
                   type="text"
                   placeholder="Music Title"
-                  value={musicTitle}
-                  onChange={(e) => setMsicTitle(e.target.value)}
+                  id="musicTitle"
+                  name="musicTitle"
+                  value={formData.musicTitle}
+                  onChange={handleInputChange}
                   required
                 />
               </div>
@@ -98,8 +127,9 @@ const MakeEnquiry: FC = () => {
                 <input
                   type="text"
                   placeholder="Music Link"
-                  value={musicLink}
-                  onChange={(e) => setMusicLink(e.target.value)}
+                  name="musicLink"
+                  value={formData.musicLink}
+                  onChange={handleInputChange}
                   required
                 />
               </div>
@@ -111,8 +141,9 @@ const MakeEnquiry: FC = () => {
                   type="text"
                   placeholder="Artics Name"
                   id="articsName"
-                  value={articsName}
-                  onChange={(e) => setArticsName(e.target.value)}
+                  name="articsName"
+                  value={formData.articsName}
+                  onChange={handleInputChange}
                   required
                 />
               </div>
@@ -124,8 +155,9 @@ const MakeEnquiry: FC = () => {
                   type="text"
                   placeholder="Released Year"
                   id="releasedYear"
-                  value={releasedYear}
-                  onChange={(e) => setReleasedYear(e.target.value)}
+                  name="releasedYear"
+                  value={formData.releasedYear}
+                  onChange={handleInputChange}
                   required
                 />
               </div>
@@ -137,8 +169,9 @@ const MakeEnquiry: FC = () => {
                   type="text"
                   placeholder="YouTube Link"
                   id="youtubeLink"
-                  value={youtubeLink}
-                  onChange={(e) => setYoutubeLink(e.target.value)}
+                  name="youtubeLink"
+                  value={formData.youtubeLink}
+                  onChange={handleInputChange}
                 />
               </div>
 
@@ -149,8 +182,9 @@ const MakeEnquiry: FC = () => {
                   type="text"
                   placeholder="Featured Artisc"
                   id="featuredArtisc"
-                  value={featuredArtisc}
-                  onChange={(e) => setFeaturedArtisc(e.target.value)}
+                  name="featuredArtisc"
+                  value={formData.featuredArtisc}
+                  onChange={handleInputChange}
                 />
               </div>
 
@@ -158,21 +192,23 @@ const MakeEnquiry: FC = () => {
                 <label htmlFor="featuredArtisc">Add Image Link</label>
                 <br />
                 <input
-                  type="text"
-                  placeholder="Image"
+                  type="file"
                   id="image"
-                  value={image}
-                  onChange={(e) => setImage(e.target.value)}
+                  name="image"
+                  onChange={handleImageChange}
+                  accept="image/*"
                 />
               </div>
+            </div>
 
+            <div className={Layout1Style.holdDiv1}>
               <div className={Layout1Style.holInput}>
                 <label htmlFor="category">Category</label>
                 <select
-                  name="category"
                   id="category"
-                  value={category}
-                  onChange={(e) => setCategory(e.target.value)}
+                  name="category"
+                  value={formData.category}
+                  onChange={handleInputChange}
                   required
                 >
                   <option value="">Select Option</option>
@@ -185,17 +221,16 @@ const MakeEnquiry: FC = () => {
                   <option value="Amapiano">Amapiano</option>
                 </select>
               </div>
-            </div>
 
-            <div className={Layout1Style.holdDiv1}>
               <div className={Layout1Style.holInput}>
                 <label htmlFor="songDeails1">Song Deails 1</label>
                 <br />
                 <textarea
                   placeholder="Song Deails 1"
                   id="songDeails1"
-                  value={songDeails1}
-                  onChange={(e) => setSongDeails1(e.target.value)}
+                  name="songDeails1"
+                  value={formData.songDeails1}
+                  onChange={handleInputChange}
                   required
                 />
               </div>
@@ -206,8 +241,9 @@ const MakeEnquiry: FC = () => {
                 <textarea
                   placeholder="Song Deails 2"
                   id="songDeails2"
-                  value={songDeails2}
-                  onChange={(e) => setSongDeails2(e.target.value)}
+                  name="songDeails2"
+                  value={formData.songDeails2}
+                  onChange={handleInputChange}
                 />
               </div>
 
@@ -217,8 +253,9 @@ const MakeEnquiry: FC = () => {
                 <textarea
                   placeholder="Song Deails 3"
                   id="songDeails3"
-                  value={songDeails3}
-                  onChange={(e) => setSongDeails3(e.target.value)}
+                  name="songDeails3"
+                  value={formData.songDeails3}
+                  onChange={handleInputChange}
                 />
               </div>
 
@@ -228,8 +265,9 @@ const MakeEnquiry: FC = () => {
                 <textarea
                   placeholder="Song Deails 4"
                   id="songDeails4"
-                  value={songDeails4}
-                  onChange={(e) => setSongDeails4(e.target.value)}
+                  name="songDeails4"
+                  value={formData.songDeails4}
+                  onChange={handleInputChange}
                 />
               </div>
 
@@ -239,8 +277,9 @@ const MakeEnquiry: FC = () => {
                 <textarea
                   placeholder="Song Deails 5"
                   id="songDeails5"
-                  value={songDeails5}
-                  onChange={(e) => setSongDeails5(e.target.value)}
+                  name="songDeails5"
+                  value={formData.songDeails5}
+                  onChange={handleInputChange}
                 />
               </div>
 

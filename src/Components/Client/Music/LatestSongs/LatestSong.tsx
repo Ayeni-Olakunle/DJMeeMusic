@@ -26,9 +26,10 @@ const LatestSongs: FC = () => {
       <h1 className={style.LatestSongs}>Latest Songs</h1>
       <div>
         {data.map((item, index) => {
+          let {} = item;
           return (
             <div className={style.holdSong} key={index}>
-              <img src={asake} alt="Dj Mee" />
+              <img src={item.fileName || asake} alt="Dj Mee" />
               <div className={style.SongDetails}>
                 <div>
                   <h1>{item.articsName}</h1>
