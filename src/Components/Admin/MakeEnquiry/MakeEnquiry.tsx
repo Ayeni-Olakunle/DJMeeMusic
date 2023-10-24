@@ -148,7 +148,6 @@ const MakeEnquiry: FC = () => {
                   name="albumName"
                   value={formData.albumName}
                   onChange={handleInputChange}
-                  required
                 />
               </div>
 
