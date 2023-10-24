@@ -11,6 +11,7 @@ interface FormData {
   featuredArtisc: string;
   releasedYear: string;
   category: string;
+  albumName: string;
   youtubeLink: string;
   songDeails1: string;
   songDeails2: string;
@@ -26,6 +27,7 @@ const MakeEnquiry: FC = () => {
     musicLink: "",
     articsName: "",
     featuredArtisc: "",
+    albumName: "",
     releasedYear: "",
     category: "",
     youtubeLink: "",
@@ -58,6 +60,7 @@ const MakeEnquiry: FC = () => {
     formDataToSend.append("articsName", formData.articsName);
     formDataToSend.append("featuredArtisc", formData.featuredArtisc);
     formDataToSend.append("releasedYear", formData.releasedYear);
+    formDataToSend.append("albumName", formData.albumName);
     formDataToSend.append("category", "Afro");
     formDataToSend.append("youtubeLink", formData.youtubeLink);
     formDataToSend.append("songDeails1", formData.songDeails1);
@@ -84,6 +87,7 @@ const MakeEnquiry: FC = () => {
           featuredArtisc: "",
           releasedYear: "",
           category: "",
+          albumName: "",
           youtubeLink: "",
           songDeails1: "",
           songDeails2: "",
@@ -129,6 +133,20 @@ const MakeEnquiry: FC = () => {
                   placeholder="Music Link"
                   name="musicLink"
                   value={formData.musicLink}
+                  onChange={handleInputChange}
+                  required
+                />
+              </div>
+
+              <div className={Layout1Style.holInput}>
+                <label htmlFor="articsName">Album Name</label>
+                <br />
+                <input
+                  type="text"
+                  placeholder="Artics Name"
+                  id="albumName"
+                  name="albumName"
+                  value={formData.albumName}
                   onChange={handleInputChange}
                   required
                 />
