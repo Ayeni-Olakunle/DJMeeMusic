@@ -11,6 +11,7 @@ import Index from "./Components/Admin";
 import Overview from "./Components/Admin/overview/overview";
 import MakeEnquiry from "./Components/Admin/MakeEnquiry/MakeEnquiry";
 import AllSong from "./Components/Admin/Reservation/Allsong";
+import DjMix from "./Components/Admin/DjMix/DjMix";
 
 const App: FC = () => {
   return (
@@ -33,6 +34,10 @@ const App: FC = () => {
 
           <Route path="all-songs">
             <Route index={true} element={<AllSong />} />
+          </Route>
+
+          <Route path="djmix">
+            <Route index={true} element={<DjMix />} />
           </Route>
 
           {/* <Route path="reservationhub">
