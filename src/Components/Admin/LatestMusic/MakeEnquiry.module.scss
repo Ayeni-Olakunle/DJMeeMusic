@@ -1,0 +1,80 @@
+.holdAll {
+  margin: 3em 0;
+  .textHead {
+    font-size: 25px;
+    font-weight: 600;
+    margin: 0;
+  }
+}
+
+.holdForm {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 50px 0;
+}
+
+.holdDiv1 {
+  width: 45%;
+}
+
+.holInput {
+  width: 100%;
+  margin-bottom: 20px;
+
+  label {
+    color: gray;
+    font-size: 15px;
+  }
+
+  input {
+    width: 90%;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: white;
+    border: 2px solid #d4d4d4;
+    margin-top: 7px;
+    color: gray;
+    outline: none;
+  }
+
+  select {
+    width: 95%;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: white;
+    border: 2px solid #d4d4d4;
+    margin-top: 7px;
+    color: gray;
+    outline: none;
+  }
+
+  textarea {
+    width: 90%;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: white;
+    border: 2px solid #d4d4d4;
+    margin-top: 7px;
+    color: gray;
+    outline: none;
+  }
+
+  option {
+    color: gray;
+    outline: none;
+  }
+}
+
+button {
+  width: 95%;
+  margin-top: 13px;
+  padding: 13px;
+  color: white;
+  background-color: #d32f2f;
+  border: 2px dashed #d32f2f;
+}
+
+button:hover {
+  border: 2px dashed #dd8585 !important;
+}

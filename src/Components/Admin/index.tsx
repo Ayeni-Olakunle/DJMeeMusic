@@ -88,7 +88,21 @@ export default function Index() {
                 }
               >
                 <img src={star} alt="logo" className={IndexStyles.iconSvg} />
-                Upload Dj Mix
+                Dj Mix
+              </Link>
+            </li>
+
+            <li className={IndexStyles.list} onClick={tabs}>
+              <Link
+                to="latestMusic"
+                className={
+                  navValue === "/admin/latestMusic"
+                    ? IndexStyles.active
+                    : IndexStyles.listLink
+                }
+              >
+                <img src={star} alt="logo" className={IndexStyles.iconSvg} />
+                Latest Music
               </Link>
             </li>
             {/* <li className={IndexStyles.list} onClick={tabs}>

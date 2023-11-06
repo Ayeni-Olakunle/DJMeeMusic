@@ -12,6 +12,7 @@ import Overview from "./Components/Admin/overview/overview";
 import MakeEnquiry from "./Components/Admin/MakeEnquiry/MakeEnquiry";
 import AllSong from "./Components/Admin/Reservation/Allsong";
 import DjMix from "./Components/Admin/DjMix/DjMix";
+import LatestMusic from "./Components/Admin/LatestMusic/LatestMusic";
 
 const App: FC = () => {
   return (
@@ -38,6 +39,10 @@ const App: FC = () => {
 
           <Route path="djmix">
             <Route index={true} element={<DjMix />} />
+          </Route>
+
+          <Route path="latestMusic">
+            <Route index={true} element={<LatestMusic />} />
           </Route>
 
           {/* <Route path="reservationhub">
