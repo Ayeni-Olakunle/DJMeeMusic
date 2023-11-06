@@ -5,13 +5,13 @@ import env from "react-dotenv";
 
 interface FormData {
   image: File | null;
-  musicTitle: string;
-  musicLink: string;
-  articsName: string;
-  featuredArtisc: string;
-  releasedYear: string;
-  category: string;
-  albumName: string;
+  latestMusicTitle: string;
+  latestMusicLink: string;
+  latestArticsName: string;
+  latestMusicCategory: string;
+  latestMusicFeaturedArtisc: string;
+  latestReleasedYear: string;
+  latestMusicalbumName: string;
   youtubeLink: string;
   songDeails1: string;
   songDeails2: string;
@@ -23,13 +23,13 @@ interface FormData {
 const LatestMusic: FC = () => {
   const [formData, setFormData] = useState<FormData>({
     image: null,
-    musicTitle: "",
-    musicLink: "",
-    articsName: "",
-    featuredArtisc: "",
-    albumName: "",
-    releasedYear: "",
-    category: "",
+    latestMusicTitle: "",
+    latestMusicLink: "",
+    latestArticsName: "",
+    latestMusicCategory: "",
+    latestMusicFeaturedArtisc: "",
+    latestReleasedYear: "",
+    latestMusicalbumName: "",
     youtubeLink: "",
     songDeails1: "",
     songDeails2: "",
@@ -55,13 +55,19 @@ const LatestMusic: FC = () => {
 
     const formDataToSend = new FormData();
     formDataToSend.append("images", formData.image as File);
-    formDataToSend.append("latestMusicTitle", formData.musicTitle);
-    formDataToSend.append("latestMusicLink", formData.musicLink);
-    formDataToSend.append("latestArticsName", formData.articsName);
-    formDataToSend.append("latestMusicCategory", formData.featuredArtisc);
-    formDataToSend.append("latestMusicFeaturedArtisc", formData.releasedYear);
-    formDataToSend.append("latestReleasedYear", formData.albumName);
-    formDataToSend.append("latestMusicalbumName", "Afro");
+    formDataToSend.append("latestMusicTitle", formData.latestMusicTitle);
+    formDataToSend.append("latestMusicLink", formData.latestMusicLink);
+    formDataToSend.append("latestArticsName", formData.latestArticsName);
+    formDataToSend.append("latestMusicCategory", formData.latestMusicCategory);
+    formDataToSend.append(
+      "latestMusicFeaturedArtisc",
+      formData.latestMusicFeaturedArtisc
+    );
+    formDataToSend.append("latestReleasedYear", formData.latestReleasedYear);
+    formDataToSend.append(
+      "latestMusicalbumName",
+      formData.latestMusicalbumName
+    );
     formDataToSend.append("youtubeLink", formData.youtubeLink);
     formDataToSend.append("songDeails1", formData.songDeails1);
     formDataToSend.append("songDeails2", formData.songDeails2);
@@ -69,7 +75,7 @@ const LatestMusic: FC = () => {
     formDataToSend.append("songDeails4", formData.songDeails4);
     formDataToSend.append("songDeails5", formData.songDeails5);
 
-    console.log(formDataToSend);
+    // console.log(formData);
 
     const options = {
       url: `https://kind-plum-whale-toga.cyclic.cloud/api/latestmusic`,
@@ -81,13 +87,13 @@ const LatestMusic: FC = () => {
       .then((response) => {
         setFormData({
           image: null,
-          musicTitle: "",
-          musicLink: "",
-          articsName: "",
-          featuredArtisc: "",
-          releasedYear: "",
-          category: "",
-          albumName: "",
+          latestMusicTitle: "",
+          latestMusicLink: "",
+          latestArticsName: "",
+          latestMusicCategory: "",
+          latestMusicFeaturedArtisc: "",
+          latestReleasedYear: "",
+          latestMusicalbumName: "",
           youtubeLink: "",
           songDeails1: "",
           songDeails2: "",
@@ -118,8 +124,8 @@ const LatestMusic: FC = () => {
                   type="text"
                   placeholder="Music Title"
                   id="musicTitle"
-                  name="musicTitle"
-                  value={formData.musicTitle}
+                  name="latestMusicTitle"
+                  value={formData.latestMusicTitle}
                   onChange={handleInputChange}
                   required
                 />
@@ -131,8 +137,8 @@ const LatestMusic: FC = () => {
                 <input
                   type="text"
                   placeholder="Music Link"
-                  name="musicLink"
-                  value={formData.musicLink}
+                  name="latestMusicLink"
+                  value={formData.latestMusicLink}
                   onChange={handleInputChange}
                   required
                 />
@@ -145,8 +151,8 @@ const LatestMusic: FC = () => {
                   type="text"
                   placeholder="Artics Name"
                   id="albumName"
-                  name="albumName"
-                  value={formData.albumName}
+                  name="latestMusicalbumName"
+                  value={formData.latestMusicalbumName}
                   onChange={handleInputChange}
                 />
               </div>
@@ -158,8 +164,8 @@ const LatestMusic: FC = () => {
                   type="text"
                   placeholder="Artics Name"
                   id="articsName"
-                  name="articsName"
-                  value={formData.articsName}
+                  name="latestArticsName"
+                  value={formData.latestArticsName}
                   onChange={handleInputChange}
                   required
                 />
@@ -172,8 +178,8 @@ const LatestMusic: FC = () => {
                   type="text"
                   placeholder="Released Year"
                   id="releasedYear"
-                  name="releasedYear"
-                  value={formData.releasedYear}
+                  name="latestReleasedYear"
+                  value={formData.latestReleasedYear}
                   onChange={handleInputChange}
                   required
                 />
@@ -199,8 +205,8 @@ const LatestMusic: FC = () => {
                   type="text"
                   placeholder="Featured Artisc"
                   id="featuredArtisc"
-                  name="featuredArtisc"
-                  value={formData.featuredArtisc}
+                  name="latestMusicFeaturedArtisc"
+                  value={formData.latestMusicFeaturedArtisc}
                   onChange={handleInputChange}
                 />
               </div>
@@ -223,8 +229,8 @@ const LatestMusic: FC = () => {
                 <label htmlFor="category">Category</label>
                 <select
                   id="category"
-                  name="category"
-                  value={formData.category}
+                  name="latestMusicCategory"
+                  value={formData.latestMusicCategory}
                   onChange={handleInputChange}
                   required
                 >
