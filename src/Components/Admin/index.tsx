@@ -105,6 +105,20 @@ export default function Index() {
                 Latest Music
               </Link>
             </li>
+
+            <li className={IndexStyles.list} onClick={tabs}>
+              <Link
+                to="news"
+                className={
+                  navValue === "/admin/news"
+                    ? IndexStyles.active
+                    : IndexStyles.listLink
+                }
+              >
+                <img src={star} alt="logo" className={IndexStyles.iconSvg} />
+                Latest News
+              </Link>
+            </li>
             {/* <li className={IndexStyles.list} onClick={tabs}>
               <Link
                 to="contact"

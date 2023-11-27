@@ -13,6 +13,7 @@ import MakeEnquiry from "./Components/Admin/MakeEnquiry/MakeEnquiry";
 import AllSong from "./Components/Admin/Reservation/Allsong";
 import DjMix from "./Components/Admin/DjMix/DjMix";
 import LatestMusic from "./Components/Admin/LatestMusic/LatestMusic";
+import LatestNews from "./Components/Admin/News/News";
 
 const App: FC = () => {
   return (
@@ -43,6 +44,10 @@ const App: FC = () => {
 
           <Route path="latestMusic">
             <Route index={true} element={<LatestMusic />} />
+          </Route>
+
+          <Route path="news">
+            <Route index={true} element={<LatestNews />} />
           </Route>
 
           {/* <Route path="reservationhub">
