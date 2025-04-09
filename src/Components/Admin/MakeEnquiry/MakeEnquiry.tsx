@@ -72,7 +72,7 @@ const MakeEnquiry: FC = () => {
     console.log(formDataToSend);
 
     const options = {
-      url: `https://kind-plum-whale-toga.cyclic.cloud/api/music`,
+      url: `https://djmeebackend.vercel.app/api/music`,
       method: "POST",
       data: formDataToSend,
     };

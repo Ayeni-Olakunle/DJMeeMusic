@@ -8,7 +8,7 @@ const LatestSongs: FC = () => {
   const [data, setData] = useState<string[]>([]);
   const getMusic = () => {
     axios
-      .get("https://kind-plum-whale-toga.cyclic.cloud/api/music")
+      .get("https://djmeebackend.vercel.app/api/music")
       .then((response) => {
         setData(response.data);
         console.log(response);

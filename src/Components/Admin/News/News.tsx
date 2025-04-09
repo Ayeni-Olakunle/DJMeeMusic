@@ -48,7 +48,7 @@ const LatestNews: FC = () => {
     // console.log(formData);
 
     const options = {
-      url: `https://kind-plum-whale-toga.cyclic.cloud/api/news`,
+      url: `https://djmeebackend.vercel.app/api/news`,
       method: "POST",
       data: formDataToSend,
     };

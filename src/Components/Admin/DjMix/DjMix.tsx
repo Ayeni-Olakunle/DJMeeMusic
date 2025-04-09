@@ -66,7 +66,7 @@ const DjMix: FC = () => {
     console.log(formDataToSend);
 
     const options = {
-      url: `https://kind-plum-whale-toga.cyclic.cloud/api/djmix`,
+      url: `https://djmeebackend.vercel.app/api/djmix`,
       method: "POST",
       data: formDataToSend,
     };
